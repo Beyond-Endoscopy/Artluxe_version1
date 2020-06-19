@@ -10,8 +10,8 @@ import random
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import pickle
-from my_pycharm_functions import *
-from my_pycharm_functions_2 import *
+from preprocess import *
+from artworks_scraper import *
 
 
 #Get the online auctions links.

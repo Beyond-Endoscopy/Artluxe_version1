@@ -6,7 +6,7 @@ import time
 import datetime
 import random
 from selenium import webdriver
-from my_pycharm_functions import *
+from preprocess import *
 
 with open('auction_links.txt') as json_file:
     links = json.load(json_file)
