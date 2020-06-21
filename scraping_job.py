@@ -11,21 +11,9 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import pickle
 from preprocess import *
-from artworks_scraper import *
+from online_artwork_getter import *
+from img_to_s3 import *
 
-
-#Get the online auctions links.
-
-online_links = []
-
-for link in links:
-    if link.find('onlineonly') > -1 and links[link] == False:
-        online_links.append(link)
-
-#Need to check the nonemptyness of online_links.
-test = online_links[:2]
-
-print(test)
 
 #Open the virtual browser.
 
@@ -38,23 +26,34 @@ browser = webdriver.Chrome(chrome_options=chrome_options)
 
 #Get the artworks information.
 
-r = get_all_artworks_all_auctions_online(browser, test)
-
-print(links)
+r = get_all_artworks_all_auctions_online(browser, 'online_auctions.txt', 'new_online_null_counter.txt', 1)
 
 print(r)
 
 browser.close()
 
-processed = preprocess(r)
+processed = preprocess(r[0])
 
 print(processed)
 print(processed[0])
 
-with open('auction_links.txt', 'w') as outfile:
-    json.dump(links, outfile)
 
-with open('artworks.txt', 'w') as file:
+
+with open('online_artworks.txt', 'w') as file:
     json.dump(processed, file)
+
+pictures = r[1]
+
+for image in pictures:
+    sale_id = image[0]
+    lot_number = image[1]
+    img_url = image[2]
+
+    name = sale_id + '_' + str(lot_number)
+
+    download_img(img_url)
+
+    upload_to_s3('img.jpg', 'mytestbucket2020june', 'Christies_images', name)
+
 
 
