@@ -12,7 +12,8 @@ Softwares: Python 3.6; Google Chrome driver 83.0.4103.39; Selenium Python 3.141.
 
 
 ## Motivation of the project
-Artluxe is a startup company offering machine learning service for art enthusiasts and collectors. To enable the machine learning jobs, an auction artworks database including text information and pictures is needed. Previously this was done manually on local computers. In this project, I built an AWS based data pipeline which can be fully automated using Apache Airflow. This data pipeline freed us from staring at the computer screen and taking notes. 
+Artluxe is a startup company offering machine learning service for art enthusiasts and collectors. To enable the machine learning jobs, an auction artworks database including text information and pictures is needed. Previously this was done manually on local computers. \
+In this project, I built an **AWS based** data pipeline which can be fully automated using Apache Airflow. This data pipeline freed us from staring at the computer screen and taking notes. 
 
 ## The pipeline
 
