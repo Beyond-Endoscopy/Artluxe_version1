@@ -4,7 +4,9 @@
 Artluxe is a startup company offering machine learning service for art enthusiasts and collectors. To enable the machine learning jobs, an auction artworks database including text information and pictures is needed. Previously this was done manually on local computers. \
 In this project, I built an **AWS based** data pipeline which can be fully automated using Apache Airflow. This data pipeline freed us from staring at the computer screen and taking notes. 
 
-## **The structure of this repository
+## **The structure of this repository 
+
+```bash
 .
 ├── README.md
 ├── histo_scraper
@@ -31,6 +33,8 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
     ├── preprocess.py
     ├── to_database.py
     └── upcoming_scraper_job.py
+
+```
 
 
 ## Running environment and softwares used
