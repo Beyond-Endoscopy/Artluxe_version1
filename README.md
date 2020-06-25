@@ -9,6 +9,9 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
 ```bash
 .
 ├── README.md
+├── airflow
+│   ├── histo_work.py
+│   └── upcoming_work.py
 ├── histo_scraper
 │   ├── histo_auctions.txt
 │   ├── histo_auctions_collector.py
@@ -33,7 +36,6 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
     ├── preprocess.py
     ├── to_database.py
     └── upcoming_scraper_job.py
-
 ```
 
 
