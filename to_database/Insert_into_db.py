@@ -3,10 +3,10 @@ import psycopg2
 
 
 
-sql = "INSERT INTO artworks_new (title, sale_id, lot_number, sale_date, " \
+sql = "INSERT INTO artworks_v2 (title, sale_id, lot_number, sale_date, " \
       "location, artist, auction_house, auction_title, estimate_text, " \
-      "estimate_min, estimate_max, price, image_url, year, description, signed, size) VALUES " \
-      "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+      "estimate_min, estimate_max, price, currency, timestamp, medium, year, description, signed, size, time_updated) VALUES " \
+      "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
 def artworks_to_datbase(file_name):
     conn = psycopg2.connect(
@@ -34,15 +34,17 @@ def artworks_to_datbase(file_name):
         estimate_min = works[i][9]
         estimate_max = works[i][10]
         price = works[i][11]
-        image_url = works[i][12]
-        year = works[i][13]
-        description = works[i][14]
-        signed = works[i][15]
-        size = works[i][16]
+        currency = works[i][12]
+        timestamp = works[i][13]
+        medium = works[i][14]
+        year = works[i][15]
+        description = works[i][16]
+        signed = works[i][17]
+        size = works[i][18]
 
         val = (title, sale_id, lot_number, sale_date, \
            location, artist, auction_house, auction_title, estimate_text, \
-           estimate_min, estimate_max, price, image_url, year, description, signed, size,)
+           estimate_min, estimate_max, price, currency, timestamp, medium, year, description, signed, size, None,)
 
         cur.execute(sql, val)
 
