@@ -1,9 +1,4 @@
-import numpy as np
 from bs4 import BeautifulSoup
-import requests
-import pickle
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 
 class auction:
     def __init__(self, driver, url, time_of_auc = 'upcoming', location = 'Online'):

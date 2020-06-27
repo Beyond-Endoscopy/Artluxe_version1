@@ -41,7 +41,7 @@ def get_all_artworks(driver, auc_link, loc):
 
 
 
-def get_all_artworks_all_auctions(driver, auction_links_name,  null_counter_name, location, number_of_auctions = None):
+def get_all_artworks_all_auctions(driver, auction_links_name, location, number_of_auctions = None):
     # Here auction_links_name is 'online_auctions.txt'.
     with open(auction_links_name) as file:
         auction_links = json.load(file)
@@ -80,9 +80,6 @@ def get_all_artworks_all_auctions(driver, auction_links_name,  null_counter_name
            auction_links[list_auctions[i]] = True
         except:
            pass
-
-    with open(null_counter_name, 'w') as file:
-        json.dump(null_counter, file)
 
     with open(auction_links_name, 'w') as file:
         json.dump(auction_links, file)

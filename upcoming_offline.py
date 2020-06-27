@@ -1,6 +1,7 @@
 from artworks_getter import *
+from insert_to_db import *
 
-r = get_all_artworks_all_auctions(browser, 'offline_auctions.txt', 'offline_null_counter.txt', 'Offline', 1)
+r = get_all_artworks_all_auctions(browser, 'offline_auctions.txt', 'Offline', 1)
 
 browser.close()
 
@@ -8,10 +9,7 @@ print(r[0])
 print(r[1])
 print(r[2])
 
-with open('offline_artworks.txt', 'w') as file:
-    json.dump(processed, file)
-
-pictures = s[1]
+pictures = r[1]
 
 for image in pictures:
     sale_id = image[0]
@@ -24,3 +22,4 @@ for image in pictures:
 
     upload_to_s3('img.jpg', 'mytestbucket2020june', 'Christies_images', name)
 
+artworks_to_database(r[0])

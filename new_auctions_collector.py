@@ -2,7 +2,6 @@ import json
 import numpy as np
 from bs4 import BeautifulSoup
 import time
-import datetime
 import requests
 
 def get_auctions(name_online, name_offline):
