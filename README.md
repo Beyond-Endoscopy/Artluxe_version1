@@ -10,32 +10,25 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
 .
 ├── README.md
 ├── airflow
-│   ├── histo_work.py
 │   └── upcoming_work.py
-├── histo_scraper
-│   ├── histo_auctions.txt
-│   ├── histo_auctions_collector.py
-│   ├── histo_scraper_job.py
-│   └── update_database.py
+├── artworks
+│   ├── artwork.py
+│   ├── artworks_getter.py
+│   ├── past_artwork.py
+│   └── past_artworks_getter.py
+├── auctions
+│   ├── auctions.py
+│   └── new_auctions_collector.py
 ├── images
 │   ├── Automated_Auction_Information_Pipeline-2.jpg
 │   └── Automated_Auction_Information_Pipeline-3.jpg
-└── upcoming_scraper
-    ├── img_to_s3.py
-    ├── monitor_to_db.py
-    ├── nb_model
-    │   ├── MultinomialNBClassifier_v1.0.pkl
-    │   └── nlp_ml_models.py
-    ├── new_auctions_collector.py
-    ├── new_auctions_monitor.txt
-    ├── new_offline_null_counter.txt
-    ├── new_online_null_counter.txt
-    ├── offline_auctions.txt
-    ├── online_artwork_getter.py
-    ├── online_auctions.txt
-    ├── preprocess.py
-    ├── to_database.py
-    └── upcoming_scraper_job.py
+├── results.py
+├── to_database
+│   ├── Insert_into_db.py
+│   ├── img_to_s3.py
+│   └── update_db.py
+├── upcoming_offline.py
+└── upcoming_online.py
 ```
 
 
