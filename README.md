@@ -14,14 +14,17 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
 ├── artworks
 │   ├── artwork.py
 │   ├── artworks_getter.py
+│   ├── auctions.py
 │   ├── past_artwork.py
 │   └── past_artworks_getter.py
-├── auctions
-│   ├── auctions.py
-│   └── new_auctions_collector.py
 ├── images
 │   ├── Automated_Auction_Information_Pipeline-2.jpg
 │   └── Automated_Auction_Information_Pipeline-3.jpg
+├── new_auctions_collector.py
+├── offline_auctions.txt
+├── online_auctions.txt
+├── past_auctions.txt
+├── past_auctions_collector.py
 ├── results.py
 ├── to_database
 │   ├── Insert_into_db.py
