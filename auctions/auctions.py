@@ -38,6 +38,9 @@ class auction:
                         self.artworks.append(l)
 
         else:
+            self.location = soup.find('span', class_="col-xs-12 col-md-2 nopadl pad-right-20-auto-width").text
+
+
             if self.location == 'Online':
                 prefix = 'https://onlineonly.christies.com'
                 for link in links:

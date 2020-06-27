@@ -11,10 +11,11 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(chrome_options=chrome_options)
 
 
-def get_all_artworks(driver, auc_link, loc):
-    auc = auction(driver, auc_link, 'past', location=loc)
+def get_all_artworks(driver, auc_link):
+    auc = auction(driver, auc_link, 'past')
     auc.get_artworks()
     link = auc.artworks[0]
+    loc = auc.location
 
     result = []
     count = 0
@@ -38,7 +39,7 @@ def get_all_artworks(driver, auc_link, loc):
     return result, count, null_count
 
 
-def get_all_artworks_all_auctions(driver, auction_links_name, null_counter_name, location, number_of_auctions=None):
+def get_all_artworks_all_auctions(driver, auction_links_name, null_counter_name, number_of_auctions=None):
     # Here auction_links_name is 'online_auctions.txt'.
     with open(auction_links_name) as file:
         auction_links = json.load(file)
@@ -66,7 +67,7 @@ def get_all_artworks_all_auctions(driver, auction_links_name, null_counter_name,
     n = len(list_auctions)
     for i in range(n):
         try:
-            r = get_all_artworks(driver, list_auctions[i], loc=location)
+            r = get_all_artworks(driver, list_auctions[i])
             print(r[0])
             result = result + r[0]
             if list_auctions[i] not in null_counter:
