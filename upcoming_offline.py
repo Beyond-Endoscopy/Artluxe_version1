@@ -1,5 +1,5 @@
-from artworks_getter import *
-from insert_to_db import *
+from artworks.artworks_getter import *
+from to_database.insert_to_db import *
 
 r = get_all_artworks_all_auctions(browser, 'offline_auctions.txt', 'Offline', 1)
 
@@ -20,6 +20,6 @@ for image in pictures:
 
     download_img(img_url)
 
-    upload_to_s3('img.jpg', 'mytestbucket2020june', 'Christies_images', name)
+    upload_to_s3('img.jpg', 'mytestbucket2020june', 'XXX_images', name)
 
 artworks_to_database(r[0])
