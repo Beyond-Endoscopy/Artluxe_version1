@@ -14,7 +14,7 @@ def get_auctions(name_online, name_offline):
     with open(name_offline) as file:
         auctions_offline = json.load(file)
 
-    url = 'https://www.christies.com/Calendar'
+    url = 'url for upcoming auctions'
 
     r = requests.get(url)
 
