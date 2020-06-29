@@ -75,6 +75,6 @@ except:
     
 #Write the running information to the database
 
-auc_monitor_db(monitor, 'Online')
+auc_monitor_db(monitor, 'Upcoming')
 
 
