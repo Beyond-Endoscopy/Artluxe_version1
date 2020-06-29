@@ -20,6 +20,6 @@ for image in pictures:
 
     download_img(img_url)
 
-    upload_to_s3('img.jpg', 'mytestbucket2020june', 'XXX_images', name)
+    upload_to_s3('img.jpg', 'mytestbucket2020june', 'xxx_images', name)
 
 artworks_to_database(r[0])
