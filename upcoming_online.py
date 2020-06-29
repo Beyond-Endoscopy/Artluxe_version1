@@ -33,4 +33,5 @@ for image in pictures:
 #Write the information into the database.
 artworks_to_database(r[0])
 
-
+#Wrtie the null counter to the database.
+null_counter_db(r[2])
