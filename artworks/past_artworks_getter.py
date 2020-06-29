@@ -10,6 +10,7 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(chrome_options=chrome_options)
 
+#This function collect all the artworks in the auction of the link 'auc_link'.
 
 def get_all_artworks(driver, auc_link):
     auc = auction(driver, auc_link, 'past')
@@ -38,6 +39,8 @@ def get_all_artworks(driver, auc_link):
 
     return result, count, null_count
 
+#This function collect all the artworks from all the auctions stored in the txt file 'auction_links_name' provided the information was not collected before.
+#'number_of_auctions' controls the number of auctions from which we want to collect the information. We collect all if not specified.
 
 def get_all_artworks_all_auctions(driver, auction_links_name, number_of_auctions=None):
     # Here auction_links_name is 'online_auctions.txt'.
