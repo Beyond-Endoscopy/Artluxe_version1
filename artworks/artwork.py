@@ -5,7 +5,8 @@ import time
 import requests
 import pickle
 
-filename = 'MultinomialNBClassifier_v1.0.pkl'
+#Due to copyrights, the model is not uploaded here.
+filename = '~/Artluxe_version1/artworks/nlp_model/MultinomialNBClassifier_v1.0.pkl'
 
 with open(filename, 'rb') as file:
     mnb_model = pickle.load(file)
@@ -23,6 +24,7 @@ class artwork:
         self.detail = []
         self.next_link = None
 
+#'xxx' is the name of the website, I removed it due to my clients request.
     def get_artwork_info(self):
         url = self.url
 
@@ -34,8 +36,8 @@ class artwork:
 
         if self.location == 'Online':
             try:
-                next_link = soup.find('span', class_="christies-icon_right-arrow")['href']
-                next_link = 'https://onlineonly.christies.com' + next_link.split('href=')[1]
+                next_link = soup.find('span', class_="xxx-icon_right-arrow")['href']
+                next_link = 'https://onlineonly.xxx.com' + next_link.split('href=')[1]
             except:
                 next_link = None
 
@@ -51,7 +53,7 @@ class artwork:
             except:
                 sale_of = None
 
-            auction_house = "Christie's"
+            auction_house = "xxx"
             auction_title = sale_of
             buyers_premium = True
             buyers_premium_perc = None
@@ -193,7 +195,7 @@ class artwork:
                     continue
 
         else:
-            next_link = soup.find('a', class_="icon christies-icon_right-arrow button-icon icon_mask-text square")[
+            next_link = soup.find('a', class_="icon xxx-icon_right-arrow button-icon icon_mask-text square")[
                 'href']
 
             sale_date = soup.find('p', id="main_center_0_lblSaleDate").text
@@ -211,7 +213,7 @@ class artwork:
                 sale_of = None
                 location = None
 
-            auction_house = "Christie's"
+            auction_house = "xxx"
             auction_title = sale_of
             buyers_premium = True
             buyers_premium_perc = None
