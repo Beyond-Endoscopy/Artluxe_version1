@@ -21,7 +21,7 @@ class auction:
 #The upcoming auction links collector, it is divided into online and offline.
         if self.time_of_auc == 'upcoming':
             if self.location == 'Online':
-                prefix = 'https://onlineonly.xxx.com'
+                prefix = 'https://online.xxx.com'
                 for link in links:
                     l = link.get('href')
                     if l != None and l.find('/s/') > -1 and l.find('lang=') == -1:
@@ -39,7 +39,7 @@ class auction:
 
 
             if self.location == 'Online':
-                prefix = 'https://onlineonly.xxx.com'
+                prefix = 'https://online.xxx.com'
                 for link in links:
                     l = link.get('href')
                     if l != None and l.find('/s/') > -1 and l.find('lang=') == -1:
