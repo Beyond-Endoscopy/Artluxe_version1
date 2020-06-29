@@ -60,7 +60,23 @@ def get_auctions(name_online, name_offline):
     with open(name_offline, 'w') as file:
         json.dump(auctions_offline, file)
 
-get_auctions('online_auctions.txt', 'offline_auctions.txt')
+        
+with open('new_link_monitor.txt') as file:
+    monitor = json.load(file)
+
+current_time = datetime.datetime.now()
+current_time = current_time.strftime("%m"+"%d"+"%Y")
+
+#The file 'new_link_monitor.txt' records whether we successfully collect the new links or not.
+
+try:        
+    get_auctions('online_auctions.txt', 'offline_auctions.txt')
+    monitor[current_time] = True
+except:
+    monitor[current_time] = False
+    
+with open('new_link_monitor.txt', 'w') as file:
+    json.dump(monitor, file)
 
 
 
