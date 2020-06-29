@@ -1,6 +1,7 @@
 from artworks.artworks_getter import *
 from to_database.img_to_s3 import *
 from to_database.insert_into_db import *
+from to_database.monitor_to_db import *
 
 #The txt file store the auction links. It is a dictionary with key the link and value True or False. 
 #Once the information of a certain auction is collected, the value is updated from False to True. 1 is the number of auctions we want to 
