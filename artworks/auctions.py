@@ -8,7 +8,7 @@ class auction:
         self.time_of_auc = time_of_auc
         self.location = location
 
-
+#'xxx' is the name of the website.
     def get_artworks(self):
         url = self.url
 
@@ -18,9 +18,10 @@ class auction:
 
         links = soup.find_all('a')
 
+#The upcoming auction links collector, it is divided into online and offline.
         if self.time_of_auc == 'upcoming':
             if self.location == 'Online':
-                prefix = 'https://onlineonly.christies.com'
+                prefix = 'https://onlineonly.xxx.com'
                 for link in links:
                     l = link.get('href')
                     if l != None and l.find('/s/') > -1 and l.find('lang=') == -1:
@@ -31,13 +32,14 @@ class auction:
                     l = link.get('href')
                     if l != None and l.find('lotfinder') > -1 and l.find('objectid') > -1:
                         self.artworks.append(l)
-
+                        
+#The past auction links collector, it is also divide into online and offline.
         else:
             self.location = soup.find('span', class_="col-xs-12 col-md-2 nopadl pad-right-20-auto-width").text
 
 
             if self.location == 'Online':
-                prefix = 'https://onlineonly.christies.com'
+                prefix = 'https://onlineonly.xxx.com'
                 for link in links:
                     l = link.get('href')
                     if l != None and l.find('/s/') > -1 and l.find('lang=') == -1:
