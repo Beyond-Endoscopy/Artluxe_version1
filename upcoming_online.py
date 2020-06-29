@@ -28,7 +28,7 @@ for image in pictures:
 
 #xxx is the name of the website. There is a folder named 'xxx_images' in my S3 bucket.
 
-    upload_to_s3('img.jpg', 'mytestbucket2020june', 'xxx_images', name)
+    upload_to_s3('img.jpg', 'my bucket name', 'xxx_images', name)
 
 #Write the information into the database.
 artworks_to_database(r[0])
