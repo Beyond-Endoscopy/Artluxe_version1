@@ -9,6 +9,9 @@ class past_artwork:
         self.info = []
         self.next_link = None
 
+#The past artwork get_artwork_info function only collect sale_id, lot_number (these two together is the artwork id) and price.
+#'xxx' is the website's name.
+
     def get_artwork_info(self):
         url = self.url
 
@@ -20,8 +23,8 @@ class past_artwork:
 
         if self.location == 'Online':
             try:
-                next_link = soup.find('span', class_="christies-icon_right-arrow")['href']
-                next_link = 'https://onlineonly.christies.com' + next_link.split('href=')[1]
+                next_link = soup.find('span', class_="xxx-icon_right-arrow")['href']
+                next_link = 'https://onlineonly.xxx.com' + next_link.split('href=')[1]
             except:
                 next_link = None
 
@@ -57,7 +60,7 @@ class past_artwork:
                 lot_text = None
 
         else:
-            next_link = soup.find('a', class_="icon christies-icon_right-arrow button-icon icon_mask-text square")[
+            next_link = soup.find('a', class_="icon xxx-icon_right-arrow button-icon icon_mask-text square")[
                 'href']
 
             # Get Auction Info
