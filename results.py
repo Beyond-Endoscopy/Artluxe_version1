@@ -10,4 +10,5 @@ browser.close()
 print(r[0])
 print(r[1])
 
+#update the database.
 update_database(r[0])
