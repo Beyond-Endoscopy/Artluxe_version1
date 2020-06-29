@@ -8,7 +8,7 @@ def get_auctions(file_name):
     with open(name_online) as file:
         auctions = json.load(file)
 
-    url = 'https://www.christies.com/Results'
+    url = 'url for past auctions'
 
     r = requests.get(url)
 
