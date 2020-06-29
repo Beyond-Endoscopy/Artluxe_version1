@@ -15,20 +15,25 @@ In this project, I built an **AWS based** data pipeline which can be fully autom
 │   ├── artwork.py
 │   ├── artworks_getter.py
 │   ├── auctions.py
+│   ├── nlp_model
+│   │   └── nlp_model.py
 │   ├── past_artwork.py
 │   └── past_artworks_getter.py
 ├── images
 │   ├── Automated_Auction_Information_Pipeline-2.jpg
 │   └── Automated_Auction_Information_Pipeline-3.jpg
 ├── new_auctions_collector.py
+├── new_link_monitor.txt
 ├── offline_auctions.txt
 ├── online_auctions.txt
 ├── past_auctions.txt
 ├── past_auctions_collector.py
+├── past_link_monitor.txt
 ├── results.py
 ├── to_database
 │   ├── Insert_into_db.py
 │   ├── img_to_s3.py
+│   ├── monitor_to_db.py
 │   └── update_db.py
 ├── upcoming_offline.py
 └── upcoming_online.py
