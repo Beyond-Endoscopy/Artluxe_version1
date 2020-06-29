@@ -4,15 +4,13 @@ import psycopg2
 sql = "UPDATE artworks_v2 SET price = %s, " \
       "time_updated = %s where sale_id = %s and lot_number = %s"
 
-def update_database(file_name):
+#password removed. 
+
+def update_database(works):
     conn = psycopg2.connect(
-        "dbname = 'postgres' user = 'postgrestest' host ='postgrestest.cfequksew9vz.us-east-1.rds.amazonaws.com' password='66155376Ab'")
+        "dbname = 'postgres' user = 'postgrestest' host ='postgrestest.cfequksew9vz.us-east-1.rds.amazonaws.com' password='ZZZ'")
 
     cur = conn.cursor()
-
-
-    with open(file_name, 'r') as file:
-        works = json.load(file)
 
     print(works)
 
@@ -31,6 +29,3 @@ def update_database(file_name):
     conn.commit()
 
     conn.close()
-
-update_database('past_artworks_online.txt')
-update_database('past_artworks_offline.txt')
