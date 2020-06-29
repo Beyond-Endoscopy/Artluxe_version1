@@ -3,6 +3,7 @@ import numpy as np
 from bs4 import BeautifulSoup
 import time
 import requests
+from to_database.monitor_to_db import *
 
 def get_auctions(name_online, name_offline):
     # Here name_online is 'online_auctions.txt'.
@@ -59,15 +60,12 @@ def get_auctions(name_online, name_offline):
 
     with open(name_offline, 'w') as file:
         json.dump(auctions_offline, file)
-
         
-with open('new_link_monitor.txt') as file:
-    monitor = json.load(file)
 
 current_time = datetime.datetime.now()
 current_time = current_time.strftime("%m"+"%d"+"%Y")
 
-#The file 'new_link_monitor.txt' records whether we successfully collect the new links or not.
+monitor = []
 
 try:        
     get_auctions('online_auctions.txt', 'offline_auctions.txt')
@@ -75,8 +73,8 @@ try:
 except:
     monitor[current_time] = False
     
-with open('new_link_monitor.txt', 'w') as file:
-    json.dump(monitor, file)
+#Write the running information to the database
 
+auc_monitor_db(monitor, 'Online')
 
 
