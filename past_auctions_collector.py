@@ -36,12 +36,12 @@ def get_auctions(file_name):
 
     with open(file_name, 'w') as file:
         json.dump(auctions, file)
-        
-with open('past_link_monitor.txt') as file:
-    monitor = json.load(file)
+       
 
 current_time = datetime.datetime.now()
 current_time = current_time.strftime("%m"+"%d"+"%Y")
+
+monitor = []
 
 try:
     get_auctions('past_auctions.txt')
@@ -49,6 +49,5 @@ try:
 except:
     monitor[current_time] = False
     
-with open('past_link_monitor.txt', 'w') as file:
-    json.dump(monitor, file)
+auc_monitor_db(monitor, 'Past')
 
