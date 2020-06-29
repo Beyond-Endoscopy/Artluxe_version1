@@ -7,9 +7,11 @@ sql = "INSERT INTO artworks_v2 (title, sale_id, lot_number, sale_date, " \
       "estimate_min, estimate_max, price, currency, timestamp, medium, year, description, signed, size, time_updated) VALUES " \
       "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
+#password removed.
+
 def artworks_to_datbase(works):
     conn = psycopg2.connect(
-        "dbname = 'postgres' user = 'postgrestest' host ='postgrestest.cfequksew9vz.us-east-1.rds.amazonaws.com' password='66155376Ab'")
+        "dbname = 'postgres' user = 'postgrestest' host ='postgrestest.cfequksew9vz.us-east-1.rds.amazonaws.com' password='ZZZ'")
 
     cur = conn.cursor()
 
