@@ -1,5 +1,6 @@
 from artworks.artworks_getter import *
 from to_database.insert_to_db import *
+from to_database.monitor_to_db import *
 
 r = get_all_artworks_all_auctions(browser, 'offline_auctions.txt', 'Offline', 1)
 
