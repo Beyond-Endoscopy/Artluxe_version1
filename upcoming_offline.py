@@ -24,3 +24,4 @@ for image in pictures:
     upload_to_s3('img.jpg', 'mytestbucket2020june', 'xxx_images', name)
 
 artworks_to_database(r[0])
+null_counter_db(r[2])
